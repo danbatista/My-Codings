@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerador de chave pública</title>
+
+<!-- CSS -->
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="assets/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/animate.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style_2.css">
+<link rel="stylesheet" href="assets/css/signin.css">
+<link href="assets/bootstrap-fileinput/css/fileinput.css" media="all"
+	rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- Favicon and touch icons -->
+<link rel='icon' href='https://ebmail.eb.mil.br/favicon.ico'>
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body onselectstart="return false" onload="myFunction()"
+	style="margin: 0;">
+
+	<div class="navbar navbar-fixed-top">
+
+		<div class="navbar-inner">
+
+			<div class="container">
+				<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="index.html"></a>
+						</div>
+					</div>
+				</nav>
+
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> 
+				<a class="brand" href="index.html"> SMIME - Servidor de Chaves	Públicas</a>
+				<a class="brand" href="index.html">Administração </a>
+
+				<div class="nav-collapse">
+					<ul class="nav pull-right">
+
+						<li class=""><a id="noaccess" style="cursor: help;"> Não
+								possui acesso? Clique aqui! </a></li>
+					</ul>
+
+				</div>
+				<!--/.nav-collapse -->
+
+			</div>
+			<!-- /container -->
+
+		</div>
+		<!-- /navbar-inner -->
+
+	</div>
+	<!-- /navbar -->
+
+
+
+	<div class="account-container">
+
+		<div class="content clearfix">
+
+			<form id="formAutentica" action="javascript:login();" method="post"
+				accept-charset=utf-8>
+
+				<h1>Autenticação de Usuário</h1>
+
+				<div class="login-fields">
+
+					<p>Entre com suas informações</p>
+
+					<div class="field">
+						<label for="user">Usuário</label> <input type="text" id="user"
+							value="" placeholder="Usuário" class="login username-field">
+
+					</div>
+					<!-- /field -->
+
+					<div class="field">
+						<label for="password">Senha</label> <input type="password"
+							id="password" value="" placeholder="Senha"
+							class="login password-field">
+					</div>
+					<!-- /password -->
+
+				</div>
+				<!-- /login-fields -->
+
+				<div class="login-actions">
+
+					<button id="btnLogin" class="button btn btn-success btn-large">Entrar</button>
+
+				</div>
+				<!-- .actions -->
+
+
+			</form>
+		</div>
+		<!-- /content -->
+
+	</div>
+	<!-- /account-container -->
+
+	<!-- 	    <footer> -->
+	<!--     <div id="support"> -->
+	<!-- 			<p>Suporte EBMail:</p> -->
+
+	<!-- 			<p>Para dúvidas e sugestões, favor entrar em contato com a Central de Serviços do 7º CTA, por meio do telefone (61) 3415-7070, ramal RITEx 860-7070 ou endereço eletrônico centsv@7cta.eb.mil.br.</p> -->
+	<!-- 		</div> -->
+	<!--     </footer> -->
+
+	<div class="modal fade" id="erro101" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: red; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i>
+					Senha incorreta!
+				</h4>
+				<div class="modal-body">
+					<t>A senha digitada é inválida!</t>
+					<p>Por favor, digite a senha de administrador</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="wait" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: #506F58; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa loading fa-1x" aria-hidden="true"></i>Enviando
+					dados...
+				</h4>
+				<div class="modal-body">
+					<t>Aguarde enquanto realizamos login</t>
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<div class="modal fade" id="wait2" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: #506F58; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa loading fa-1x" aria-hidden="true"></i>Apagando...
+				</h4>
+				<div class="modal-body">
+					<t>Aguarde enquanto realizamos essa operação.</t>
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="erro101" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: red; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i>
+					Senha incorreta!
+				</h4>
+				<div class="modal-body">
+					<t>A senha digitada é inválida!</t>
+					<p>Por favor, digite a senha de administrador</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="erro101" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: red; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i>
+					Informações indisponíveis!
+				</h4>
+				<div class="modal-body">
+					<t>No momento não conseguimos acessar a base de dados</t>
+					<p>Por favor, tente novamente!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="suporte" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: #506F58; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-1x" aria-hidden="true"></i>Suporte
+				</h4>
+				<div class="modal-body">
+					<t> Caso não tenha acesso, favor entrar em contato com a
+					Central de Serviços do 7º CTA, por meio do telefone (61) 3415-7070,
+					ramal RITEx 860-7070 ou endereço eletrônico centsv@7cta.eb.mil.br.
+					</t>
+					<p>Lembrando que o acesso a esta página é restrita ao
+						administrador do sistema.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="aviso" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: #506F58; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-1x" aria-hidden="true"></i>Erro
+				</h4>
+				<div class="modal-body">
+					<t> Você não pode deixar nenhum campo vázio! </t>
+					<p>Digite seu usuário e senha de administrador.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="sucesso" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: #506F58; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-1x" aria-hidden="true"></i>Sucesso
+				</h4>
+				<div class="modal-body">
+					<t> Registro apagado com sucesso! </t>
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="erro" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content"
+				style="background-color: red; color: white;">
+				<a type="button" style="margin-right: 10px; margin-top: 5px"
+					class="close" data-dismiss="modal">&times;</a> <br>
+				<h4 class="modal-title">
+					<i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i>
+					Erro ao se comunicar com o servidor!
+				</h4>
+				<div class="modal-body">
+					<t></t>
+					<p>Por favor, tente novamente mais tarde.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Javascript -->
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- mascaras -->
+	<script src="assets/js/jquery.mask.min.js"></script>
+	<!-- Background -->
+	<script src="assets/js/jquery.backstretch.min.js"></script>
+	<!-- imagens -->
+	<script src="assets/js/retina-1.1.0.min.js"></script>
+	<!-- uso -->
+	<script src="assets/js/scripts.js"></script>
+	<!-- CEP -->
+	<script src="assets/js/formzin-1.0.4.min.js"></script>
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+
+	<script src="assets/bootstrap-fileinput/js/fileinput.js"></script>
+
+	<script>
+		$("#noaccess").click(function() {
+			$("#suporte").modal('show');
+		});
+		
+	
+
+		function del(id) {
+			
+			 $.ajax({
+					type : "POST",
+					crossDomain : false,
+                    contentType : false,
+					processData : false, 
+					url : 'https://10.0.80.32:7777/SMIME_CHAVE_PUBLICA/rest_pub/service/del',
+					data : id,
+					beforeSend : function() {
+						$('#wait2').modal('show');
+					
+					},
+					success : function(data) {
+						$('.close').trigger('click');
+						console.log(data);
+						if (data === '100') {
+							$("#listCerts tbody tr td").each(function() {
+								if ($(this).text() == id)
+									$(this).parent().remove();
+							});
+						}else{
+							$('#erro').modal('show');
+						}
+					},
+					error : function(XMLHttpRequest, textStatus,
+							errorThrown) {
+						$('.close').trigger('click');
+						$('#erro').modal('show');
+						console.log(textStatus);
+						console.log(XMLHttpRequest);
+						console.log(errorThrown);
+					}
+				});
+		}
+
+		function loadContent() {
+			$
+					.ajax({
+						type : "GET",
+						crossDomain : false,
+						url : "https://10.0.80.32:7777/SMIME_CHAVE_PUBLICA/rest_pub/service/todosCertificados",
+						beforeSend : function() {
+							$(".nav.pull-right").append("<li id='exit'><a>Sair</a></li>");
+							
+							
+							$(".nav #exit").on('click',function() {
+								
+							    window.location.href="login.html";
+								
+							});
+						},
+						success : function(data) {
+							$('body .account-container').remove();
+							$('body ').append(
+									"<table id='listCerts' class='display'>");
+							$('body  #listCerts')
+									.append(
+											"<thead><tr><th>Id</th><th>Email</th><th>Apagar</th></tr></thead>");
+							$('body  #listCerts').append(
+									"<tbody>");
+							for (i in data) {
+								$('body  #listCerts tbody')
+										.append(
+												"<tr><td>"
+														+ data[i].id
+														+ "</td><td>"
+														+ data[i].email
+														+ "</td><td><a href='javascript:del("
+														+ data[i].id
+														+ ")'>Apagar</a></td></tr>");
+							}
+							$('body  #listCerts').append(
+									"</tbody>");
+							$(document).ready(function() {
+								$('#listCerts').DataTable(({
+									 "language": {
+								            "lengthMenu": "mostrando _MENU_ resultados por página",
+								            "zeroRecords": "Nada encontrado - desculpe",
+								            "info": "Mostrando páginas _PAGE_ of _PAGES_",
+								            "infoEmpty": "Sem resultados",
+								            "infoFiltered": "(filtrando de _MAX_ resultados totais)",
+                                       paginate: {
+        first:    '«',
+        previous: '‹',
+        next:     '›',
+        last:     '»'
+    },
+    aria: {
+        paginate: {
+            first:    'Primeiro',
+            previous: 'Anterior',
+            next:     'Próximo',
+            last:     'Último'
+        }
+    }
+								        }
+								});
+							});
+						},
+						error : function(XMLHttpRequest, textStatus,
+								errorThrown) {
+							$(".nav #exit").remove();
+						}
+					});
+
+		}
+
+		function login() {
+			var formdata = new FormData();
+
+			formdata.append('password', $('#password').val());
+			formdata.append('user', $('#user').val());
+			if ($('#password').val() == '' && $('#user').val() == ''
+					|| $('#password').val() == ' ') {
+				$("#aviso").modal('show');
+				return;
+			}
+			$
+					.ajax({
+						type : "POST",
+						crossDomain : false,
+						url : 'https://10.0.80.32:7777/SMIME_CHAVE_PUBLICA/rest_pub/service/login',
+						//url : 'http://localhost:8081/SMIME_CHAVE_PUBLICA/rest/service/upload',		
+						data : formdata,
+						contentType : false,
+						processData : false,
+						beforeSend : function() {
+							$('#wait').modal('show');
+						},
+						success : function(data) {
+							$('.close').trigger('click');
+							console.log(data);
+							if (data === '100') {
+								loadContent();
+							} else if (data === '101') {
+								$('#erro101').modal('show');
+							} else if (data === '102') {
+								$('#erro102').modal('show');
+							}
+						},
+						error : function(XMLHttpRequest, textStatus,
+								errorThrown) {
+							$('.close').trigger('click');
+							$('#erro').modal('show');
+							console.log(textStatus);
+							console.log(XMLHttpRequest);
+							console.log(errorThrown);
+						}
+					});
+		};
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+/*!
+ * Mobile Site Basic v1.0
+ *
+ * Front-End by Lucas Felinto
+ * lucas.felinto@ftips.com.br
+ *
+ * Expansive development
+ *
+*/
+
+/* ==========================================================================
+   Star CSS - General
+   ========================================================================== */
+a {text-decoration: none;}
+
+strong {font-weight: bold;}
+
+hr {clear: both;}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 90%;
+}
+
+/* Classes Comuns
+========================================================================== */
+.aleft   {text-align: left;}
+.acenter {text-align: center;}
+.aright  {text-align: right;}
+
+.figure img {max-width: 100%;}
+
+.clear {clear: both;}
+
+.show  {display: block;}
+.hide  {display: none;}
+
+.first {}
+.last  {}
+
+.fleft  {float: left;}
+.fright {float: right;}
+.inline { display: inline-block;}
+/* Buttons
+========================================================================== */
+.bt {
+  background: url('../img/layout-bg/bg-bt.png') 0 0 repeat-x;
+  display: inline-block;
+  border: 1px solid #54557e;
+  border-radius: 3px;
+  min-width: 95px;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0 0 0 17px;
+}
+  .bt a {
+    display: block;
+    color: #fff;
+    padding: 7px 0;
+  }
+
+/* ==========================================================================
+   Wrapper
+   ========================================================================== */
+
+/* .header
+========================================================================== */
+.header {
+  background: url('../img/layout-bg/bg-header.png') 0 0 repeat-x;
+  padding: 6px 0;
+}
+  .header .figure {
+    text-align: center;
+  }
+
+.header .error
+{
+	display: none;
+    padding: 15px 0;
+    color:#FF0000;
+}
+
+.header .error .bold
+{
+    font-weight:bold;
+}
+
+/* .footer
+========================================================================== */
+.footer {}
+
+/* Container
+========================================================================== */
+#wrap {
+  color: #535353;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section {
+  
+}
+  .section .header {
+    background: none;
+    padding: 0;
+    margin: 21px 14px 20px;
+  }
+    .section .header h1 {
+      font-size: 1.3em;
+      font-weight: bold;
+      padding: 0 0 14px;
+    }
+    .section .header p {
+      font-size: 1.1em;
+      line-height: 18px;
+    }
+    
+    .section .footer {
+      padding: 13px 14px 14px;
+      text-align: right;
+    }
+
+.sectionBottom p{
+    font-size: 80%;
+    margin-top: 20px;
+    color: #989898;
+  }
+
+/* Content
+========================================================================== */
+.content {
+  box-shadow: inset 0 0 8px #e7e7e7;
+  -webkit-box-shadow: inset 0 0 8px #e7e7e7;;
+  padding: 21px 15px 37px;
+  overflow: hidden;
+  line-height: 17px;
+}
+  .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-weight: bold;
+  }
+  .content h1 {}
+  .content h2 {
+    line-height: 17px;
+    margin: 0 0 15px;
+  }
+  .content h3 {}
+  .content h4 {}
+  
+  .content p {margin: 10px 0;}
+  
+  .content .figure {}
+    .content .figure img {}
+  
+  .content strong {font-weight: bold;}
+  
+  .content hr {}
+  
+  .content a {
+    color: #1364a3;
+    text-decoration: none;
+  }
+  
+  .content ul {list-style: disc; padding: 0px 0px 0px 20px;}
+    .content ul li {padding: 0px 0px 10px 0px;}
+      .content ul li ul {margin-left: 10px;}
+        .content ul li ul li {}
+  
+  .content .radioBtn {
+    margin: 7px 0;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: url('../img/layout-bg/input-radio.png') 0 0 no-repeat;
+    float: left;
+    border: none;
+  }
+    .content input[type="radio"]:checked { background-position: 0 -24px;}
+  .content .label {
+    float: left;
+    padding: 13px 5px;
+    vertical-align: middle;
+    display: block;
+    width: 80%;
+  }
+  
+  .protocol {
+    margin: 15px 0 0;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+    .protocol .header {
+      margin: 0;
+      font-size: 0.7em;
+      border-bottom: 1px solid #BFBFBF;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+    }
+      .protocol .header p {
+        background: url('../img/layout-bg/bg-header-table.png') 0 100% repeat-x;
+        margin: 0;
+        padding: 10px 13px;
+        border: none;
+      }
+    .protocol p {
+      padding: 13px 0;
+      margin: 0 13px;
+      border-bottom: 1px dotted #989898;
+      overflow: hidden;
+    }
+      .protocol p:last-child {
+        border: none;
+      }
+      .protocol p strong.hour {
+        margin: 0 0 0 20%;
+      }
+      .protocol p strong {
+        
+      }
+      .protocol p span {
+        
+      }
+      .protocol .num {
+        color: #54579a;
+        font-weight: bold;
+      }
+      
+  .prot-right {
+    width : 83%; 
+    vertical-align: top;
+  }
+  .prot-left { width : 45px;}
+
+
+
+
+
+

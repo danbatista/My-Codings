@@ -1,0 +1,102 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+	<!-- ADDED BY VIGNETTE PORTLET PACKAGING TOOL.  DO NOT EDIT -->
+	<context-param>
+		<param-name>contextPath</param-name>
+		<param-value>${artifactId}</param-value>		
+	</context-param>
+	<!-- END THIS VIGNETTE PACKAGING TOOL ADDITION. -->
+
+	<!--
+		- Location of the XML file that defines the root application context.
+		- Applied by ContextLoaderServlet.
+	-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/config/web-application-config.xml</param-value>
+	</context-param>
+
+	<!-- ADDED BY VIGNETTE PORTLET PACKAGING TOOL.  DO NOT EDIT -->
+	<filter>
+		<filter-name>PortletApplicationSecurityFilter</filter-name>
+		<filter-class>
+			com.vignette.portal.portlet.jsrcontainer.PortletApplicationSecurityFilter
+		</filter-class>
+	</filter>
+	<!-- END THIS VIGNETTE PACKAGING TOOL ADDITION. -->
+	<!-- ADDED BY VIGNETTE PORTLET PACKAGING TOOL.  DO NOT EDIT -->
+	<filter-mapping>
+		<filter-name>PortletApplicationSecurityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- END THIS VIGNETTE PACKAGING TOOL ADDITION. -->
+	<!-- ADDED BY VIGNETTE PORTLET PACKAGING TOOL.  DO NOT EDIT -->
+	<listener>
+		<listener-class>
+			com.vignette.portal.portlet.jsrcontainer.PortletApplicationServletContextListener
+		</listener-class>
+	</listener>
+	<!-- END THIS VIGNETTE PACKAGING TOOL ADDITION. -->
+
+	<!--
+		- Loads the root application context of this web app at startup, - by
+		default from "/WEB-INF/applicationContext.xml". - Note that you need
+		to fall back to Spring's ContextLoaderServlet for - J2EE servers that
+		do not follow the Servlet 2.4 initialization order. - - Use
+		WebApplicationContextUtils.getWebApplicationContext(servletContext) -
+		to access it anywhere in the web application, outside of the
+		framework. - - The root context is the parent of all servlet-specific
+		contexts. - This means that its beans are automatically available in
+		these child contexts, - both for getBean(name) calls and (external)
+		bean references.
+	-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- ADDED BY VIGNETTE PORTLET PACKAGING TOOL.  DO NOT EDIT -->
+	<servlet>
+		<servlet-name>PortletCommandServlet</servlet-name>
+		<!--
+		<display-name>Portlet Command Servlet</display-name>
+		<description>
+			Utilized by VAP to invoke JSR 168 portlets
+		</description>
+		 -->
+		<servlet-class>
+			com.vignette.portal.portlet.jsrcontainer.PortletCommandServlet
+		</servlet-class>
+	</servlet>
+	<!-- END THIS VIGNETTE PACKAGING TOOL ADDITION. -->
+
+	<!--
+		- The ViewRendererServlet acts as a bridge from Portlet requests to
+		Servlet requests. - Thus a Spring Portlet is able to leverage Spring
+		MVC's view rendering capabilities.
+	-->
+	<servlet>
+		<servlet-name>viewRendererServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.ViewRendererServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>viewRendererServlet</servlet-name>
+		<url-pattern>/WEB-INF/servlet/view</url-pattern>
+	</servlet-mapping>
+
+	<!-- ADDED BY VIGNETTE PORTLET PACKAGING TOOL.  DO NOT EDIT -->
+	<servlet-mapping>
+		<servlet-name>PortletCommandServlet</servlet-name>
+		<url-pattern>/portletCommand/*</url-pattern>
+	</servlet-mapping>
+	<!-- END THIS VIGNETTE PACKAGING TOOL ADDITION. -->
+
+</web-app>

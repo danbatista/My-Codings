@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:esb="http://alsb.telemar/soap/esb" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://alsb.telemar/soap/esb" elementFormDefault="unqualified">
+              <xsd:element name="ResponseControl" type="esb:ResponseControlType"	/>
+              <xsd:complexType name="ResponseControlType">
+		<xsd:sequence>
+			<xsd:element name="code" type="xsd:string"/>
+			<xsd:element name="reason" type="xsd:string"/>
+			<xsd:element name="detail" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

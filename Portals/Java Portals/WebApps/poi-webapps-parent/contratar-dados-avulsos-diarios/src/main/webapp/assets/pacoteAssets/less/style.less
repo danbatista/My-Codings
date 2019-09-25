@@ -1,0 +1,124 @@
+@import "elements";
+@import "normalize";
+@import "buttons";
+@import "icons";
+
+body {
+    background-color: #F9F9F9;
+    font-family: Helvetica, Arial;
+    color: #525252;
+}
+
+header {
+    text-align: center;
+    background-image: url(../images/background_header.png);
+    height: 48px;
+    width: 100%;
+    &:before {
+        content: ' ';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .icon-logo {
+        vertical-align: middle;
+    }
+}
+
+p.error {
+    background-color: #FBF2F3;
+    border: 1px solid #F07B7B;
+    color: #e37272;
+    padding: 8px;
+    .rounded(4px);
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    color: #4f3f6a;
+    font-size: 22px;
+    font-weight: normal;
+    border-bottom: 2px solid #4c3c66;
+    padding-bottom: 3px;
+
+    .icon-error, .icon-success {
+        margin-bottom: 5px;
+    }
+
+    &.success {
+        text-align: center;
+        color: #5da1a6;
+        border-color: #5da1a6;
+    }
+
+    &.error {
+        text-align: center;
+        color: #858585;
+        border-color: #858585;
+    }
+}
+
+ul.plans {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        border-bottom: 1px solid #ddd;
+        padding: 16px 0;
+        font-size: 18px;
+        .plan {
+            font-weight: bold;
+        }
+        .por {
+            font-size: 13px;
+        }
+        .currency {
+        }
+        .integer {
+            font-size: 22px;
+        }
+        .decimal {
+
+        }
+    }
+}
+
+div.actions {
+    text-align: center;
+    table {
+        width: 100%;
+        td {
+            width: 50%;
+        }
+        td.separator {
+            width: 2%;
+        }
+        .btn {
+            width: 100%;
+            .box-sizing(border-box);
+        }
+    }
+}
+
+table.actions {
+    .btn {
+        width: 100%;
+    }
+}
+
+div.footer-note {
+    font-size: 13px;
+    border: 1px solid #eee;
+    .rounded(2px);
+    padding: 4px;
+}
+
+// Elements with horizontal margin
+p, h2, ul.plans, div.footer-note, div.actions {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}

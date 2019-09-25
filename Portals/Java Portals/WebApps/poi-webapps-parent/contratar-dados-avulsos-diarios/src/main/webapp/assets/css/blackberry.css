@@ -1,0 +1,45 @@
+/*!
+ * Mobile Site Basic v1.0
+ *
+ * Front-End by Lucas Felinto
+ * lucas.felinto@ftips.com.br
+ *
+ * Expansive development
+ *
+*/
+
+/* ==========================================================================
+   Star CSS - BlackBerry
+   ========================================================================== */
+body {
+  font-size: 80%;
+}
+
+.content, .section .footer {
+  background: url('../img/layout-bg/bg-shadow.png') 0 0 repeat-x;
+}
+
+.content input[type="radio"] {
+	margin: 7px 0;
+  	float:left;
+}
+
+.content .label {
+    float: left;
+    padding: 5px 5px;
+    vertical-align: middle;
+    display: block;
+    width: 80%;
+  }
+
+.protocol .header p {
+  padding: 10px 5px;
+}
+
+.protocol p {
+  margin: 0 5px;
+}
+
+
+
+

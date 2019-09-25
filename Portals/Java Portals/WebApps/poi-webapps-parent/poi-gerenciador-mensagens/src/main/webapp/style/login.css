@@ -1,0 +1,293 @@
+/*
+Indice
+#CSS				Css Reset
+#GER			Classes uteis
+#HDR			Header	
+#HDR-01		Header > User Info box
+#HDR-02		Header > Menu
+#SDB				Sidebar 
+#SDB-01		Sidebar > Chat
+#SDB-02		Sidebar > Suporte
+#SDB-03		Sidebar > Promo
+#FTR				Footer
+*/
+
+
+/*  #CSS CSS RESET */
+header, nav, section, article, aside, footer, hgroup 
+{ 
+display: block;
+}
+
+* { margin:0; padding:0; }
+html { font-size: 62.5%; font-family: arial, helvetica, verdana, tahoma, sans-serif; color:#313131; }
+
+ul, ol { list-style-position:outside; }
+ul li, ol li { text-indent:0; }
+table { border-collapse:collapse; border-spacing:0; }
+img, a img { border:0 none; }
+ 
+h1 {font-size: 2em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+h6 {font-size: 1.1em;}
+
+a:link { color: #54579a; }
+a:visited { color: #54579a;  }
+a:hover { color: #404380;  }
+a:active { color: #54579a;  }
+
+cite, em, dfn { font-style: italic; }
+del { text-decoration: line-through; color: #666; }
+ins, dfn { border-bottom: 1px solid #ccc; }
+abbr, acronym { text-transform: uppercase; font-size: 85%; letter-spacing: .1em; }
+a abbr, a acronym { border: none; }
+abbr[title], acronym[title], dfn[title] { cursor: help; border-bottom: 1px solid #ccc; }
+sup { vertical-align: super; }
+sub { vertical-align: baseline; }
+blockquote { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; color: #444; margin:5px 20px; padding:5px 0}
+article,aside,details,dialog,eventsource,figure,footer,header,mark,menu,meter,nav,output,progress,section,{ display:block; }
+.placeholder { color:#666; }
+
+/* #GER Classes uteis */
+.clearfix:after { /*classe para limpar containers com filhos flutuantes*/
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility: hidden; }
+	*.clearfix {display:inline-block;}
+	*html .clearfix {height: 1px;}
+	.clearfix {display: block;}
+
+.wrapper { /* Classe para centralizar conteudo na pagina */
+	width:990px; 
+	margin:0 auto; }
+
+.button { /* Botoes usados em todo o site. Aplicaveis em links. Podem receber atributos de largura. */
+	font:bold 11px/28px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+	color:#fff !important;
+	text-decoration:none;
+	text-align:center;
+	display:inline-block;
+	padding:0 10px;
+	position:relative;
+	background:url(images/bg-button.jpg) no-repeat -10px top; }
+	.button span { 
+		width:10px; height:28px;
+		display:inline-block;
+		position:absolute;
+		right:0; top:0;
+		_right:-1px;
+		background:url(images/bg-button.jpg) no-repeat 0 top;  }
+
+/* #HDR Header */
+header { 
+	display:block;
+	overflow:hidden; 
+	margin-bottom:15px; 
+	background:url(images/bg-header-menu-pattern.jpg) repeat-x bottom center; }
+header h1 { 
+	width:240px; 
+	height:65px; 
+	float:left;
+	margin:25px 0;  }
+
+/* #HDR-01 Header > User Info box */
+#userInfo {
+	background: url(images/bg-header-userInfo.jpg) no-repeat 255px center;
+	float:right;
+	color:#313131; 
+	width:650px; }
+	time#dateInfo {
+		font-size:16px;
+		font-weight:bold;
+		width:250px; 
+		float:left; 
+		margin:50px 0 30px; }
+	section#userData {
+		font-size:14px;
+		width:370px; 
+		float:left; display:inline;
+		margin:40px 0 30px 30px; }
+		section#userData p { 
+			float:left; 
+			width:300px; }
+		section#userData strong { color:#54579a }
+		section#userData small { 
+			font-size:11px; 
+			color:#888; 
+			display:block; }
+		section#userData .button { 
+			float:right;
+			text-transform:uppercase;
+			width:50px;}
+		
+/* #HDR-02 Header > Menu */
+header nav {
+	display:block;
+	background:url(images/bg-header-menu.jpg) no-repeat top center; }
+header nav ul { 
+	overflow:hidden;
+	width:990px; 
+	margin:0 auto; }
+	header nav li { 
+		float:left;
+		list-style:none;
+		height:73px;  }
+		header nav a { 
+			color:#fff; 
+			display:block;
+			text-indent:-9999px;
+			width:190px; 
+			height:73px;  }
+			header nav li#nav-home a { background:url(images/bg-header-menu-sprite.png) no-repeat 0 top; width:185px; }
+			header nav li#nav-contaTotal a { background:url(images/bg-header-menu-sprite.png) no-repeat scroll -185px top; width:225px; }
+			header nav li#nav-movel a { background:url(images/bg-header-menu-sprite.png) no-repeat -410px top; width:207px; }
+			header nav li#nav-fixo a { background:url(images/bg-header-menu-sprite.png) no-repeat -618px top; width:192px; }
+			header nav li#nav-internet a { background:url(images/bg-header-menu-sprite.png) no-repeat -810px top; width:180px; }
+				header nav li#nav-home.active a { background-position:0 bottom; }
+				header nav li#nav-contaTotal.active a { background-position:-185px bottom; }
+				header nav li#nav-movel.active a { background-position:-410px bottom; }
+				header nav li#nav-fixo.active a { background-position:-618px bottom; }
+				header nav li#nav-internet.active a { background-position:-810px bottom; }
+
+/* #SDB Sidebar */
+aside { 
+	float:right;
+	width:230px; 
+	background:url(images/bg-sidebar.jpg) no-repeat left top;
+	min-height:800px;
+	height:auto !important;
+	height:800px;}
+	aside section { 
+		clear:both;
+		margin:0 0 10px 25px; 
+		width:204px;
+		display:block;}
+	aside section.box {
+		width:204px;
+		background:url(images/bg-sidebar-sectionBox-pattern.jpg) repeat-y left top; }
+		aside section.box h3 {
+			color:#000;
+			font:bold 14px/16px Arial, Helvetica, Verdana, Tahoma, sans-serif; 
+			letter-spacing:-.1em;
+			background:url(images/bg-sidebar-sectionBox-title.jpg) no-repeat left top;
+			padding:8px 12px; 
+			margin:0 0 5px; }
+
+/* #SDB-01 Sidebar > Chat */
+section#sidebar-chat a { 
+	display:block;
+	text-indent:-9999px;
+	width:204px; height:60px;
+	background:url(images/bt-sidebar-chat.jpg) no-repeat top left; }
+
+/* #SDB-02 Sidebar > Suporte*/
+section#sidebar-suporte h4 { 
+	margin:0 15px;
+	padding: 10px 11px 10px 30px;
+	background:url(images/bg-sidebar-suporte-subTitle.jpg) no-repeat left top;
+	font:bold 12px/14px Arial, Helvetica, Verdana, Tahoma, sans-serif; }
+
+section#sidebar-suporte form { 
+	margin:5px 0 15px 15px;
+	padding:5px 10px;
+	background:url(images/bg-sidebar-suporte-form.jpg) no-repeat center left; }
+section#sidebar-suporte form input { 
+	background:transparent; 
+	line-height:20px; 
+	width:135px; border:1px solid red; 
+	border:none; outline:none;
+	vertical-align:middle; }
+	section#sidebar-suporte form input.submit { 
+		text-indent:-9999px; 
+		font-size:0;
+		color:transparent;
+		cursor:pointer;
+		outline:0 none;
+		width:25px; height:20px; }
+
+section#sidebar-suporte ul li { /* lista de links */
+	list-style:none outside none;
+	margin:0 15px 12px;
+	padding:0 0 0 10px;
+	background:url(images/bullet-arrow.gif) no-repeat center left }
+section#sidebar-suporte ul.moreLinks { margin-top:20px; }
+section#sidebar-suporte ul.moreLinks li {
+	background:url(images/bg-sidebar-suporte-moreLinks-item.jpg) no-repeat left top;
+	padding: 20px 11px 0 40px;
+	margin:0;
+	height:33px;
+	font:bold 12px/14px Arial, Helvetica, Verdana, Tahoma, sans-serif;}
+	section#sidebar-suporte a { text-decoration:none; }
+
+/* #SDB-03 Sidebar > Promo */
+section#sidebar-promo { 
+	font:normal 12px/14px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+	display:block; 
+	height:242px;
+	background:url(images/bg-sidebar-promo.jpg) no-repeat top left; }
+	section#sidebar-promo div {
+		padding:33px 10px 10px 87px;}
+	section#sidebar-promo h3 { 
+		font:bold 14px/15px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+		margin-bottom:5px;} 
+	section#sidebar-promo strong {
+		display:block;
+		font-size:46px;
+		line-height:46px;
+		height:55px;
+		letter-spacing:-2px;}
+		section#sidebar-promo strong sub,
+		section#sidebar-promo strong sup { 
+		font-size:22px; }
+
+/* #FTR	Footer */
+footer { 
+	color:#555658;
+	font:normal 11px/15px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+	height:100px;
+	background:url(images/bg-footer-pattern.jpg) repeat-x center bottom;
+	clear:both;
+	text-align:center; }
+	
+footer .wrapper  {
+	padding-top:35px;
+	background:url(images/bg-footer.jpg) no-repeat center top; }
+	footer .wrapper  a { 
+		color:#555658;
+		font-weight:bold;
+		text-decoration:none;} 
+
+
+#content {
+	width:730px;
+	font:normal 11px/15px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+	padding:10px 0;
+	color:3313131;
+	float:left;
+}
+.message-box { 
+	position:relative;
+	background:#f2f2f2 }
+	.message-box div { 
+		background:url(images/bg-message-box-message.jpg) no-repeat center left;
+		padding:15px 5px 15px 25px; 
+		margin:0 15px;
+		border-top:1px dotted #989898; }
+		.message-box div:first-child,
+		.message-box div.first-child { border:0 none;}  
+		.message-box a { 
+			font-weight:bold;
+			text-decoration:none; } 
+	.message-box .bt-close {
+		position:absolute;
+		font-size:10px;
+		font-weight:normal;
+		height:12px; width:12px;
+		text-align:center;
+		top:5px; right:10px;
+		text-decoration:none; }

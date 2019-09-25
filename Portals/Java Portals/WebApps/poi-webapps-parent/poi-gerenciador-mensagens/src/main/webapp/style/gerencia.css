@@ -1,0 +1,82 @@
+table {
+	background: none;
+	border: none;
+}
+
+table tr {
+	background: none;
+}
+
+table tr td { 
+	border: none;
+	vertical-align: top;
+}
+
+table tr td.td-value { 
+	border: none;
+	vertical-align: middle;
+}
+
+table tr td.td-label {
+	background-color: #F2F2F2; 
+	border: none;
+}
+
+select.sweetContentSelect {
+	margin-top: 0px;
+	width: 320px;
+	height: 25px;
+	padding-left: 3px;
+	padding-top: 3px;
+}
+
+label.span-label {
+	padding: 0px 0px 0px 0px;
+}
+
+textarea#txt-area {
+	background: #FFFFFFF;
+	width: 308px;
+	margin-top: 0px;
+	min-height: 110px;
+	padding: 5px;
+}
+
+input[type="text"]#txt-box {
+	width: 313px;
+	height: 23px;
+	background: white;
+	border: solid 1px;
+	padding-left: 5px;
+}
+
+div#div-btns {
+	float: right;
+	padding-right: 30px;
+}
+
+span.td-span {
+	padding-top: 20px;
+}
+
+textarea#mensagem_text,
+textarea#orientacao_text,
+textarea#original_text {
+	background: #FFFFFFF;
+	width: 308px;
+	margin-top: 0px;
+	min-height: 110px;
+	padding: 5px;
+}
+
+input[type="text"]#codigo_textbox,
+input[type="text"]#descricao_textbox,
+input[type="text"]#chave_textbox,
+input[type="text"]#posicao_textbox,
+input[type="text"]#cod_retorno_textbox {
+	width: 313px;
+	height: 23px;
+	background: white;
+	border: solid 1px;
+	padding-left: 5px;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerador de chave pública</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+	  <link href="assets/bootstrap-fileinput/css/fileinput.css" media="all" rel="stylesheet"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicon and touch icons -->
+    <link rel='icon' href='https://ebmail.eb.mil.br/favicon.ico'>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body onselectstart="return false" onload="myFunction()" style="margin:0;">
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html"></a>
+				</div>
+			</div>
+		</nav>
+    <!-- Top content -->
+    <div class="top-content">
+      <div class="inner-bg">
+        <div class="container">
+          <div id="loader"></div>
+          <div style="display:none;" id="myDiv" class="animate-bottomid row">
+            <!-- <div style="" id="progressBar"></div> -->
+            <div class="col-sm-7">
+              <div class="main">
+                <h1 style="color: white; margin-top: -2cm; margin-left: -265px;">
+					        Submeta o seu certificado
+				        </h1>
+                <br>
+                <h3 style="color:white"></h3>
+              </div>
+            </div>
+            <div id="construcao" class="col-sm-5 form-box">
+				      <div class="form-top">
+					      <div class="form-top-left">
+						      <h3>Submissão de certificado EBMail</h3>
+						      <p>Siga os passos a seguir</p>
+					      </div>
+				      </div>
+				      <div class="form-bottom">
+					      <div id="erro" class="row apagado">
+						      <div class="alert alert-danger">
+							      <b>Erro na submissão</b>
+							      <p>Nenhum campo deve estar vazio</p>
+						      </div>
+					      </div>
+					      <div class="registration-form">
+					        <label>Insira o seu certificado</label>
+					        <div id="div_certificado" class="form-group">
+						        <input id="input_certificado" type="file" class="file" data-show-upload="false" data-show-caption="true" data-allowed-file-extensions='["p12", "pfx"]'>
+					        </div>
+					        <label>Insira a sua senha</label>
+					        <br>
+					        <div id="div_senha" class="form-group">
+						        <input id="input_senha" type="password" class="form-control" id="input_senha"/>
+					        </div>
+					        <br>
+					        <a id="continuar" class="btn-link-1">Enviar</a>
+					      </div>
+				      </div>
+            </div>
+			      <div id="fim" class="col-sm-5 form-box apagado">
+				      <div class="form-top">
+					      <div class="form-top-left">
+						    <h3>Certificado submetido com sucesso!</h3>
+						    <p>Retorne para o EBMail</p>
+					    </div>
+				      </div>
+				      <div class="form-bottom">
+					      <div class="registration-form">
+					        <a id="retornar"  href ="index.html" class="btn-link-1">Retornar</a>
+					      </div>
+				      </div>
+            </div>
+          </div>
+		      <div class="modal fade" id="erro101" role="dialog">
+		        <div class="modal-dialog modal-sm">
+		          <div class="modal-content" style="background-color: red; color: white;">
+                <a type="button" style="margin-right: 10px; margin-top: 5px" class="close" data-dismiss="modal">&times;</a>
+				        <br>
+				        <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i> Erro ao submeter o certificado!</h4>
+                <div class="modal-body">
+                  <t>A senha digitada é inválida!</t>
+				          <p>Por favor, refaça a submissão.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+		      <div class="modal fade" id="erro102" role="dialog">
+		        <div class="modal-dialog modal-sm">
+		          <div class="modal-content" style="background-color: red; color: white;">
+                <a type="button" style="margin-right: 10px; margin-top: 5px" class="close" data-dismiss="modal">&times;</a>
+				        <br>
+				        <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i> Erro ao submeter o certificado!</h4>
+                <div class="modal-body">
+                  <t>O Arquivo inserido é inválido!</t>
+				          <p>Por favor, refaça a submissão.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="erro" role="dialog">
+		        <div class="modal-dialog modal-sm">
+		          <div class="modal-content" style="background-color: red; color: white;">
+                <a type="button" style="margin-right: 10px; margin-top: 5px" class="close" data-dismiss="modal">&times;</a>
+				        <br>
+				        <h4 class="modal-title"><i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i> Erro ao submeter o certificado!</h4>
+                <div class="modal-body">
+                  <t>Erro no envio!</t>
+				          <p>Por favor, refaça a submissão.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="modal fade" id="wait" role="dialog">
+		        <div class="modal-dialog modal-sm">
+		          <div class="modal-content" style="background-color: #506F58; color: white;">
+                <a type="button" style="margin-right: 10px; margin-top: 5px" class="close" data-dismiss="modal">&times;</a>
+				        <br>
+				        <h4 class="modal-title"><i class="fa loading fa-1x" aria-hidden="true"></i>Enviando dados...</h4>
+                <div class="modal-body">
+                  <t>Aguarde enquanto enviamos seus dados!</t>
+				          <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+
+    <!-- Javascript -->
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- mascaras -->
+    <script src="assets/js/jquery.mask.min.js"></script>
+    <!-- Background -->
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <!-- imagens -->
+    <script src="assets/js/retina-1.1.0.min.js"></script>
+    <!-- uso -->
+    <script src="assets/js/scripts.js"></script>
+    <!-- CEP -->
+    <script src="assets/js/formzin-1.0.4.min.js"></script>
+	  <script src="assets/bootstrap-fileinput/js/fileinput.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<import resource="classpath:poi-commons-config-context.xml" />
+	
+	<!-- Configuração dos beans de WebService  -->
+	<bean id="${interfaceNome}" 
+		   class="${package}.service.impl.${interfaceNome}Impl">		
+		<constructor-arg ref="dataSourceTargetUrl${interfaceNome}" />
+		<constructor-arg ref="dataSourceTargetTimeOut${interfaceNome}" />
+		<constructor-arg ref="dataSourceTargetReadTimeOut${interfaceNome}" />
+		<constructor-arg ref="defaultMaxConnectionsPerHost${interfaceNome}" />
+		<constructor-arg ref="maxTotalConnections${interfaceNome}" />
+	</bean>
+
+	<bean id="defaultMaxConnectionsPerHost${interfaceNome}"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="maxConnPerHostConfiguration" />
+		<property name="targetMethod" value="getInt" />
+		<property name="arguments">
+			<list>
+				<value>${interfaceNome}</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="maxTotalConnections${interfaceNome}"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="maxTotalConnConfiguration" />
+		<property name="targetMethod" value="getInt" />
+		<property name="arguments">
+			<list>
+				<value>${interfaceNome}</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="dataSourceTargetUrl${interfaceNome}"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="urlConfiguration" />
+		<property name="targetMethod" value="getString" />
+		<property name="arguments">
+			<list>
+				<value>${interfaceNome}</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="dataSourceTargetTimeOut${interfaceNome}"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="timeOutConfiguration" />
+		<property name="targetMethod" value="getInt" />
+		<property name="arguments">
+			<list>
+				<value>${interfaceNome}</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="dataSourceTargetReadTimeOut${interfaceNome}"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="readTimeOutConfiguration" />
+		<property name="targetMethod" value="getInt" />
+		<property name="arguments">
+			<list>
+				<value>${interfaceNome}</value>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>

@@ -1,0 +1,446 @@
+/* FORM & INPUTS */
+
+*:focus {outline:0 none;} /* correcao de borda nos inputs quando focados para google chrome */
+
+#content form {margin: 30px 0;}
+
+fieldset {border: none;}
+
+section.OiIndica fieldset {border:0;margin:0;padding:20px 0 0 0;}
+
+.error{font-size:11px;line-height:13px;font-weight:normal;color:#F00;}
+
+.divlabel, label {
+	display:block;
+	font-size: 11px;
+	font-weight: normal;
+  padding: 0 15px 5px 0;
+}
+.divLabel.cleft, label.cleft {*float:none !important; *width:auto;}
+
+.divlabel2 {
+    float: left;
+    padding: 10px 0 10px 95px;
+    height: 33px;
+    width: 100%;
+}
+
+input {vertical-align: middle;}
+
+input.inputCheckBox {
+	margin-right:5px;
+	_position:relative;
+	_left:-3px;
+	*left:-3px
+}
+
+#ATT_ADESAO_COMMAND #content input.inputCheckBox {
+	margin-right:5px;
+	_position:relative;
+	_left:-3px;
+	*left:-3px
+	*position:relative;
+	*z-index: 1000;
+}
+
+
+input[type=text]{font-family:arial,tahoma,sans-serif;}
+input.inputCheckBoxSSO {margin:0 0 0 60px;}
+input.checkboxCadastraLoginSenhaSSO {margin:0 0 0 60px;}
+label.inlineCheckbox {margin-left: 10px;float: none;display: inline-block;}
+label.inlineCheckbox input.inputCheckBox {vertical-align: middle;}
+
+.ipt {background: #FFF url(images/bginput.gif) repeat-X top center;border: none;padding: 4px 0 3px 0;height:16px;position:relative;*position:none;z-index:0;}
+.ipt.emailAcesso {vertical-align:top\0/; height:23px\0/ !important; line-height:23px\0/; padding: 0\0/;}
+.iptRadio {vertical-align: middle;}
+.iptRadioDown{padding-top: 2px !important;padding-bottom: 4px !important;}
+
+
+.wrapinput {
+  display: inline-block;
+  vertical-align: middle;
+	margin: 0 1px 3px 0;
+}
+
+.wrapinput input {
+  border-top: 1px solid #c7c7c7;
+  border-bottom: 1px solid #c7c7c7;
+	font-size:13px;
+	line-height:15px;
+	color:#666;
+	font-family:arial,tahoma,sans-serif!important;
+}
+
+.wrapinput:focus {
+    border: none;
+    background: none;
+}
+
+.wrapinput span {
+    height: 25px;
+    vertical-align: middle;
+    width: 6px;
+    display: inline-block;
+}
+
+.wrapinput .leftinput {
+    width: 6px;
+    background: url(images/leftinput.gif) no-repeat;
+}
+
+.wrapinput .rightinput {
+    width: 6px;
+    background: url(images/rightinput.gif) no-repeat;
+}
+/*51534 set/2012 - leo.carvalho*/
+/*Padrao para inputs desabilitados, insere bordas correspondentes*/
+
+.wrapinput.desativado .leftinput {
+   width: 6px;
+   background: url(images/leftinputDis.gif) no-repeat;
+}
+.wrapinput.desativado .rightinput {
+   width: 6px;
+   background: url(images/rightinputDis.gif) no-repeat;
+}
+
+/*fim desabilitados*/
+
+
+.divlabel b, label b {
+    display: inline-block;
+    /*width: 85px;*/
+    width: 90px;
+    text-align: right;
+    padding-right: 3px;
+    line-height: 25px;
+    height: 25px;
+    margin: 0;
+}
+
+.sidebysideboxg label {
+    float: left;
+}
+
+label small {
+    color: #b3b3b3;
+    font: 11px arial, tahoma, sans-serif;
+}
+
+/* Tira a largura dos B */
+.nobwidth b {
+    width: auto;
+    padding-right: 5px;
+}
+
+.labelLonger {
+    width: 150px;
+}
+
+.labelLongerm {
+    width: 300px;
+}
+
+.bLonger, b.bLonger {
+    width: 150px;
+}
+fieldset.blonger {width:auto;}
+fieldset.blonger label b {width:150px;}
+
+.bRg, b.Rg { margin-left: 80px; _margin-left: 60px; }
+
+.apagaIe7 {
+	*display:none;
+}
+
+.labelLongerg {
+    width: 500px;
+}
+
+.labelLongerg b {
+    width: 140px;
+}
+
+.labelLongerg2 {
+    width: 650px;
+}
+
+.labelLongerg2 b {
+    width: 140px;
+}
+
+.labelm {
+    width: 293px;
+}
+
+.labelH {
+    height: 20px;
+    padding: 20px 0 30px 0;
+}
+
+.labelg {
+    height: 120px;
+    width: 631px;
+}
+
+.labelg b {
+    float: left;
+    margin-bottom: 110px;
+}
+.lblRadio { float: left; margin-right: 10px; }
+b.bwidth {
+	width: 100px;
+	float: left;
+}
+fieldset.bLonger, fieldset.bMedio {
+    width: auto;
+}
+
+fieldset.bMedio b {
+    width: 120px;
+}
+
+label i, .divlabel i , fieldset i{
+  font-style: normal;
+  display: inline-block;
+  width: 140px;
+  *padding-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+	z-index: 1;
+}
+
+/* Campos Espeficicos */
+.iptDDD {width:18px;}
+.iptDDD-g{width:25px;}
+.iptCEP {width:72px;}
+.iptCEP1 {width:42px;}
+.iptCEP2 {width:26px;}
+.iptNumero, .iptOrgaoEmissor {width:56px; }
+.iptEstado {width:36px; }
+.iptTel, .iptCel {width:70px;}
+.iptNascimento {width:78px;}
+.iptComplemento, .iptBairro, .iptCidade {width:120px;}
+.iptCPF {width:102px;}
+.iptCPF-g {width:111px;}
+.iptCodigo {width: 100px;}
+.iptEmail {width: 256px;}
+
+ 
+#bloqueioperdaroubo .iptCPF {width:98px;}
+
+#bloqueioperdaroubo .iptCel{width:63px;}
+#bloqueioperdaroubo .iptNascimento {width:66px;}
+
+
+/* Campos diversos */
+.inputppp { width: 18px; }
+.inputpp {width: 36px;}
+.inputppm {width: 46px;}
+.inputppm2 {width: 43px;}
+.inputppm3 {width: 70px;}
+.inputppm4 {width: 83px;}/*51534 - leo.carvalho*/
+.inputppm9 {width: 222px;}/*51534 - leo.carvalho*/
+.inputppm11 {width: 46px;}
+.inputp {width: 120px;}
+.inputp1 {width: 100px;}
+.inputp2 {width: 115px;}
+.inputpm {width: 169px;}
+.inputpm2 {width: 200px;}
+.inputg {width: 256px;}
+.inputgg {width: 367px;}
+.inputggg {width: 500px;}
+.inputgg3 {width: 367px;}/* 51534 set 2012 - leo.carvalho*/
+
+#telefoneContato.inputpm{width:95px;}
+
+/*THS*/
+.iptComplementoEndMuda {width: 200px !important;}
+
+
+.frmBloqueio {
+    background: #F2F2F2 url(images/inputs/bg-frm-bloqueio.png) no-repeat left top;
+    display: block;
+    height: 136px;
+    padding: 25px;
+    overflow: hidden;
+    width: 613px !important;
+}
+
+.textarea {
+    background: url(images/inputs/bg-textarea.png) scroll no-repeat left top;
+    border: none;
+    float: left;
+    height: 115px;
+    width: 538px;
+}
+
+.textareaLarge {
+	background: url(images/inputs/bg-textarea.png) no-repeat left top;
+	display:inline-block;
+	vertical-align:top;
+	}
+.textareaLarge  textarea { 
+    height: 95px;
+    width: 518px;
+	vertical-align:top;
+	padding: 10px; 
+	border:none;
+	font:11px verdana, sans-serif;
+	background:transparent;
+}
+.bt-limpar {
+    float: left;
+}
+
+.bt-enviar {
+    float: right;
+}
+
+.bt-enviarBloqueio {
+    clear: both;
+	_display:block !important; _width:35px;
+    margin: 10px 0 0 145px;
+	*position: absolute;
+}
+
+#bloqueioperdaroubo .button.bt-enviarBloqueio{
+	*position: absolute;
+	*margin: 10px 0px 0px 145px;
+}
+
+a.bt-enviarBloqueio:hover {
+	_display:block !important; _width:35px !important;
+}
+/*LABELS*/
+.lbldesejoreceber {
+    margin: 15px 0;
+}
+
+.lbldesejoreceber input {
+    float: left;
+    margin: 0 5px 10px 0;
+}
+
+.labelCep {
+    width: 270px;
+}
+
+/** Caixa que aparece o texto de leis, acordos etc */
+.legaltext {
+    overflow: auto;
+    height: 125px;
+    padding: 20px;
+}
+
+.legaltextwrapper {
+    width: 693px;
+    height: 165px;
+    clear: both;
+    background: url(images/inputs/boxtextolegal.gif) no-repeat;
+    margin: 15px 0;
+    font-size: 12px;
+}
+
+#content .legaltext p {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+/* Alinha os campos de contato de 5.4 MeusDadosAcesso.php */
+
+.inome {
+    width: 131px;
+}
+/*
+	alinha elementos flutuados a direita na tela AdesaoContaUnica.php
+*/
+.alingform {
+	margin:0 23px 0 0;
+}
+/*
+	esconte os custom fields do banco
+*/
+.cfbanco {
+	display:none;
+}
+/*
+	
+*/
+
+#dconta label {
+	padding: 0 5px 0 0 ;
+}
+#dconta small {
+	color: #B3B3B3;
+    font: 11px arial,tahoma,sans-serif;
+}
+/*
+
+*/
+
+.radiogroup label,
+.radiogroup2 label {
+	height: 28px !important;
+    padding: 5px 15px 0 0;
+	margin: 0 28px 0 0;;
+}
+.radiogroup,
+.radiogroup2 {
+	margin: 0; padding: 0;
+	width: 460px;
+}
+.radiogroup label,
+.radiogroup2 label {
+	float: left;
+	margin: 0;
+	width:120px;}
+.radiogroup2 label.lwidth {
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-left:0 !important;
+
+}
+.radiogroup2 label.nowidth {
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-left:0 !important;
+	width: 60px !important;
+}
+.radiogroup label input,
+.radiogroup2 label input {
+	margin: 1px 13px 0 0;
+	*margin: 1px 5px 0 0;
+}
+.aling-button {
+	margin: 45px 0 0;
+}
+.spacing-div {
+	clear: both;
+	display: inline-block;
+	margin:0 0 15px 0;
+}
+.spacing-div label, .cboth label {float:left;width:auto;}
+
+#criacaoLoginSenha label {padding:10px 0 0 0;}
+#criacaoLoginSenha label.SemPaddBottom {padding:0;}
+#criacaoLoginSenha label.LabelCheckBox, #criacaoLoginSenha label.optionGroup {padding-bottom:0; margin-bottom:0;}
+
+#religarPagamentoContaStyle{ display: inline-block;height: 0px;}
+#religarPagamentoContaStyle .error {font-style: normal;}
+
+#solicitarConsertoStyle{display: inline-block;height: 0px;*padding: 0 0 0 0;*position: absolute;}
+#solicitarConsertoStyle .error {font-style: normal;margin: 157px;*margin:159px !important;margin:159px\0/;}
+
+#dataConserto {*width:157px!important;width:153px;}
+
+#formprinc .button.fright{*margin-top: -27px !important;_margin-top: -27px !important;}
+
+#cadastraProdutoForm .iptTel,#cadastraProdutoForm .iptCel{width:75px;}
+#cadastraProdutoForm .iptNascimento{width:109px;}
+
+/*Meus produtos*/
+#labelTokenFixoR1R2.bLonger{
+   width: 190px;
+}
+#content form#validaTokenFixo{margin:30px 0 50px;}

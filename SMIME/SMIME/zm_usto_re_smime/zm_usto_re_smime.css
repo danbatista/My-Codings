@@ -1,0 +1,172 @@
+.Imgzm_usto_re_smime-panelIcon {
+background: url("/img/encrypt.png") no-repeat 0 0!important ;
+width: 16px!important ;
+height: 16px!important ;
+overflow: hidden!important ;
+background-size: cover!important ;
+}
+
+.Imgzm_usto_re_smime-panelIcon3 {
+background: url("/img/signencrypt.png") no-repeat 0 0!important ;
+overflow: hidden!important ;
+background-size: cover!important ;
+height: 16px!important ;
+width: 16px!important ;
+}
+
+.Imgzm_usto_re_smime-panelIcon2 {
+  background: url("/img/sign.png") no-repeat 0 0!important ;
+width: 18px!important ;
+height: 16px!important ;
+overflow: hidden!important ;
+background-size: cover!important ;
+}
+
+.Imgzm_usto_re_smime-menu {
+/*background: url("/img/smime.png") no-repeat 0 0!important ; D 24/01/2017*/
+/*width: 65px!important ; D 24/01/2017*/
+height: 19px!important ;
+overflow: hidden!important ;
+position: relative!important ;
+top: 2px!important ;
+}
+#zb__COMPOSE-1__SMIME_title{
+    padding: 0px 0px 0px 12px;
+    }
+/*
+.modal-container.caixa .error{
+	color: red!important ;
+bottom: 152px!important ;
+}
+*/
+
+.titleSMIME {position: relative!important ;left: 40%!important ;width: 200px!important ;color: green !important ;border: 2px solid green!important ;
+padding: 2px!important ;
+    font-size: 19px !important;
+}
+
+#content {
+    font-family: "Arial"!important ;
+    font-size: 14px!important ;
+    font-style: normal!important ;
+    margin-left: 26px!important ;
+    margin-top: 15px !important;
+}
+.linkEBDrive{
+margin-right: 10px!important ;
+margin-left: 10px!important ;
+position: relative!important ;
+top: -5px!important ;
+border-bottom: 1px solid green!important ;
+border-radius: 3px!important ;
+}
+.object a:last-of-type{
+margin-right: 10px!important ;
+margin-left: 10px!important ;
+position: relative!important ;
+top: -5px!important ;
+}
+
+.fancybox-skin{
+	color: #063605 !important ;
+}
+
+#fileCert{
+	margin-bottom: 20px!important ;
+}
+
+#send{
+  width: 150px!important ;
+	margin-left:5px!important ;
+}
+
+#cancel{
+    width: 150px!important;
+    margin-left: 94px!important;
+}
+
+.caixa label{
+  padding: 3px!important ;
+  font-size: 13px!important ;
+}
+
+.fancybox-inner{
+	background-color: #063605 !important;
+      width: 428px !important;
+    height: 390px !important;
+}
+
+.fancybox-opened {
+    width: 446px !important;
+}
+
+.fancybox-wrap.fancybox-desktop.fancybox-type-html.fancybox-opened {
+    left: 454px !important;
+}
+
+.fancybox-skin{
+    background-color: #063605 !important;
+}
+
+.fancybox-inner p:last-of-type{
+
+margin-top: -16px!important ;
+position: absolute!important ;
+}
+
+.caixa input:disabled {
+    color: white !important ;
+    cursor: not-allowed!important ;
+}
+
+.fancybox-wrap div h2,.fancybox-wrap label, .fancybox-wrap p, .fancybox-wrap h3, .fancybox-overlay div h2,.fancybox-overlay label,.fancybox-overlay p,.fancybox-overlay h3{color:white!important;}
+.fancybox-overlay h3{
+font-size: 22px;
+padding: 4px 0px 13px !important;
+}
+.smime{
+ height:120px!important ; 
+ width:120px!important ;
+ position: absolute;
+    left: 52px;
+    top: 141px;
+}
+
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+#password{
+   height: 30px !important;
+   width: 294px !important;
+}
+#labeloffile{
+    position: absolute;
+top: 3px;
+height: 33px;
+left: 83px;
+color: black !important;
+width: 200px !important;
+}
+
+#content .c1{
+    font-weight: bold;
+}
+#content .c2{
+    font-style: italic;
+}

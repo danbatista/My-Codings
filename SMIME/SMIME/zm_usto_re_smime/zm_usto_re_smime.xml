@@ -1,0 +1,14 @@
+<zimlet name="zm_usto_re_smime" version="1.0" description="smime">
+	       
+        	<include>zm_usto_re_smime.js</include>
+            <includeCSS>zm_usto_re_smime.css</includeCSS>
+	        <handlerObject>zm_usto_re_smime</handlerObject>
+
+ <zimletPanelItem label="Segurança SMIME" icon="zm_usto_re_smime-panelIcon3">
+ 	
+ 	 <toolTipText>
+     Adicionar certificados do SMIME
+ </toolTipText>
+ </zimletPanelItem> 
+
+</zimlet>

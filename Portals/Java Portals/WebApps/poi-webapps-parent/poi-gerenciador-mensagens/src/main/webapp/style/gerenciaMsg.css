@@ -1,0 +1,550 @@
+@import url(selectbox.css); 
+@import url(forms.css); 
+@import url(modal.css);
+
+/*
+Indice
+#CSS			Css Reset
+#GER			Classes uteis
+#HDR			Header	
+#HDR-01		Header > User Info box
+#HDR-02		Header > Menu
+#SDB			Sidebar#FTR			Footer
+*/
+
+/*  #CSS CSS RESET */
+textarea {resize:none;}
+* { margin:0; padding:0; }
+html {font-size:62.5%;font-family:arial,helvetica,verdana,tahoma,sans-serif;color:#313131;background:#C2C5CA none;}
+
+ul, ol { list-style-position:outside; }
+ul li, ol li { text-indent:0; }
+table {border: 2px solid #c3c3c3;
+	margin-bottom: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-collapse: collapse;
+	position:relative;/* não retirar para tooltips gerais! leo.carvalho*/   }
+img, a img { border:0 none; }
+
+table tr{padding: 10px 10px 8px;
+	color: #313131;
+	text-align: left;
+	background: url(images/dot.gif) repeat-X center top;}
+	
+table thead tr{background: #f5f0f0;}
+table thead th{padding-left: 5px;}
+table tr td{border-left:1px solid #c3c3c3; padding-left: 5px;}
+ 
+h1 {font-size: 2em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+h6 {font-size: 1.1em;}
+
+a:link { color: #54579a; text-decoration: none; }
+a:visited { color: #54579a;  }
+a:hover { color: #404380;  text-decoration: underline; }
+a:active { color: #54579a;  }
+
+cite, em, dfn { font-style: italic; }
+del { text-decoration: line-through; color: #666; }
+ins, dfn { border-bottom: 1px solid #ccc; }
+abbr, acronym { text-transform: uppercase; font-size: 85%; letter-spacing: .1em; }
+a abbr, a acronym { border: none; }
+abbr[title], acronym[title], dfn[title] { cursor: help; border-bottom: 1px solid #ccc; }
+sup { vertical-align: super; }
+sub { vertical-align: baseline; }
+blockquote { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; color: #444; margin:5px 20px; padding:5px 0}
+article,aside,details,dialog,eventsource,figure,footer,header,mark,menu,meter,nav,output,progress,section { display:block; }
+.placeholder { color:#666;}
+.fleft {float:left;}
+.fright, .fr {float:right;}
+
+/* #GER Classes uteis */
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+*.clearfix {display:inline-block;}
+*html .clearfix {height:1px;}
+.clearfix {display:block;}
+.wrapper {width:auto;margin:0 auto; }
+.button {border:none;font:bold 11px/28px Arial, Helvetica, Verdana, Tahoma, sans-serif;color:#fff !important;text-decoration:none;text-align:center;display:inline-block;padding:0 10px;margin:5px 0 0 0;*margin:0 0 0 0;position:relative;letter-spacing:0;background:url(images/bg-button.jpg) no-repeat -10px top;text-shadow: #6f71ba 1px 1px 1px;}
+.button span {width:10px; height:28px;display:inline-block;position:absolute;right:0; top:0;_right:-1px;background:url(images/bg-button.jpg) no-repeat 0 top;}	
+.button:hover{background-position:-10px bottom;}
+.button:hover span{background-position:0 bottom;}
+.procLogin {margin:5px 0 0 70px;*margin-top:2px;}
+
+/* #HDR Header */
+header {display:block;overflow:hidden;background:#FFF none;height:50px;z-index:999;}
+header h1 {float:left;width:240px;margin:10px 0;*padding-bottom:10px;_padding-bottom:10px;}
+
+/* #HDR-02 Header > Menu */
+nav.box-menu {display:block;overflow:hidden;margin-bottom:15px;background:url(images/bg-header-menu-pattern.jpg) repeat-x top center;}
+.area-sso h2 {background:url(images/bg-header-menu.jpg) top center;text-align: center; width: auto; margin-left: 0px;
+}
+.area-sso h2 span {height:46px;width:auto;	display:block;margin:0 auto;color:#fff;font-weight:normal;font-size:16px;padding:27px 0 0 0;}
+.info {text-indent:-9999px;width:241px;height:22px;float:right;margin: 50px 0 25px;background:url(images/bg-sso-header-info.png) no-repeat}
+
+#geral {min-height:250px;}
+
+body{background:#FFF none;}
+
+body.tabela-canal {overflow: scroll; width: 147%;}
+
+/* #FTR	Footer */
+footer {*margin-top:45px;color:#555658;font:normal 11px/15px Arial, Helvetica, Verdana, Tahoma, sans-serif;background:#FFF url(images/bg-footer-pattern.jpg) repeat-x center bottom;padding-bottom:15px;*padding-bottom:9px;clear:both;text-align:center;height:auto;}
+footer .wrapper {padding:25px 0;background:transparent none;}
+footer .wrapper  a{color:#555658;font-weight:bold;text-decoration:none;} 
+footer .wrapper  a:hover{text-decoration:underline;} 
+
+/* Content */
+p.msgCampoPreenchObrig {color:#989898;font-size:10px;text-align:right;margin:0 0 10px 0;}
+
+
+.area-sso{background:#FFF none;padding:0 0 10px; margin: 0 auto; width: auto; border:4px solid #3e4176; border-top:0;}
+
+
+.area-sso #geral {padding:20px 0;}
+
+
+.area-sso #geral .top-links{float: right; margin-right: 30px;}
+.area-sso #geral a.home{font-size: 12px; color: #3e4176; font-weight: bold; margin-left: 20px;}
+
+.area-sso #geral p.msg{font-size:14px;}
+
+h2.titulosSSO {background:none;clear: both;color: #000000;font: bold 18px Arial,Helvetica,Verdana,Tahoma,sans-serif;margin-bottom: 10px;padding: 0 0 10px;position:relative;}
+.area-sso #geral h2 {height:36px;width:100%;display:block;margin:0 auto 35px;}
+#sso-3-crieSeuLogin #geral h2, #sso-4-crieSeuLogin #geral h2 {background:url(images/bg-sso-title-validacaoDados.jpg) no-repeat top left;}
+#sso-3-atualizacaoCadastro #geral h2, #sso-4-atualizacaoCadastro #geral h2 {background:none;}
+#sso-3-criacaoLoginSenha #geral h2, #sso-4-criacaoLoginSenha #geral h2 {background:none;font-size:14px;font-weight:normal;}
+#sso-3-confirmacao  #geral h2, #sso-4-confirmacao  #geral h2 { background:transparent; font-size:14px; color:#000; text-indent:0; font-weight: normal; }
+#sso-3-confirmacao span.tit-sso, #sso-home span.tit-sso, #sso-4-criacaoLoginSenha span.tit-sso {background:none; text-indent:0px; color: #FFFFFF; font-size:22px; height: 48px; padding-top: 25px;}
+#sso-3-confirmacao p.txt-aviso, #sso-home p.txt-aviso, #sso-4-criacaoLoginSenha p.txt-aviso, #sso-3-crieSeuLogin p.txt-aviso {font-size:14px}
+#sso-3-confirmacao p.txt-avisoBig, #sso-home p.txt-avisoBig, #sso-4-criacaoLoginSenha p.txt-avisoBig, #sso-3-crieSeuLogin p.txt-avisoBig {font-size:16px}
+.area-sso #geral .warning{background:url(images/warning_sso.png) no-repeat 0 0;display:block;margin:0 auto 20px;width:996px;height:49px;}
+.area-sso #geral .warning .inner{padding:8px 10px 8px 65px;height:33px;overflow:hidden;}
+.area-sso #geral .warning .inner{font-family:arial,sans;font-size:13px;font-weight:normal;line-height:16px;}
+.area-sso #geral section {width:655px;float:left;}
+.area-sso #geral section.wider{width:790px;}
+.area-sso #geral section.full{width:100%;float:none;}
+.area-sso #geral aside section { width:100%;}
+.area-sso aside {font:normal 11px/20px Arial, Helvetica, Verdana, Tahoma, sans-serif;	margin-top:40px;float:right;background:#f2f2f2;padding:20px 35px;width:250px;_width:215px;min-height: 0px;*min-height: 0px;}
+.area-sso aside li { list-style:none; }
+.area-sso aside h4 {font:bold 18px/20px Arial, Helvetica, Verdana, Tahoma, sans-serif;margin:0 0 10px;}
+.area-sso aside .meusDados h4 {height:16px;width:100%;}
+h4 strong {color:black;}
+
+/* Content > formularios */
+i.error {
+	color: #ff0000;
+	font-style: normal; }
+section form {	
+	width:100%;
+	overflow:visible;
+	margin:15px 0 20px;;
+	color:#666;
+	float:left;
+	font:normal 11px/1.5em Helvetica, Arial, Verdana, Tahoma, sans-serif; }
+
+section fieldset {clear:both;padding:0 20px 0 20px;margin:0 auto; border:0 none; width: auto; }
+.fieldsetProcLogin2 {margin:0 auto; text-align:center;}/*01/10/2012*/
+
+
+.fieldsetProcLogin2 .ProcLogin2 {margin-right: 210px;}
+.fieldsetProcLogin3 .ProcLogin3 {margin:0;}
+.fieldsetProcLogin2 div .wrapinput {margin-right: 4px;}
+
+section h3 { 
+	font-size:26px;
+	line-height:26px;
+	margin:0 0 20px 0;
+	padding:0 5px;
+	background:#fff;
+	color:#000; }
+	
+
+input.typeText{	
+	background:transparent url(images/bg-sso-form-input.gif) no-repeat -30px center;
+	outline:0; 
+	border:1px solid;
+	padding:5px 4px 4px;
+	color:#666;
+}
+.selectdoc .selectbox {_padding:7px 0 5px; _height:25px !important; *height:15px !important;}
+	span.inputBorder{
+		display:none;
+		width:5px;
+		height:25px;
+		vertical-align:middle; 
+		background:url(images/bg-sso-form-input-border.png) no-repeat right center;}
+	section form input.selectbox {
+		background: url(images/setadddbox.gif) no-repeat left center;
+		display: inline-block;
+		width: 60px;
+		*height:15px;}
+		.selectcomplemento input.selectbox {
+		vertical-align: top;
+			background:url(images/selectm3.gif) no-repeat;
+			width:96px;
+			height:15px;
+		}
+		.selectcomplemento2 input.selectbox {
+		vertical-align: top;
+			background:url(images/selectm2.gif) no-repeat;
+			width:178px;
+			height:15px;
+		}
+		.selectendereco input.selectbox {
+			background: url("images/selectm4.gif") no-repeat scroll 0 0 transparent;
+    		width: 350px
+		}
+		.nofloat {float:none !important;}
+		
+section form select { vertical-align:middle; height:auto; width: 220px; }
+
+
+section form textarea { 
+	width:650px; height:55px;
+	vertical-align:top; padding:10px; 
+	border:1px solid;
+	font:11px verdana, sans-serif;
+	background:transparent;
+	margin-top: 10px;
+}
+.textareaspan {
+	background: url(images/bg-sso-form-textarea.jpg) no-repeat left top;
+	display:inline-block;
+	vertical-align:top;
+}
+input{vertical-align: middle;}
+
+.inputSmallest {width:18px;}
+.inputSmaller {width:25px;}
+.inputSmall_v2 {width:50px;}
+.inputSmall_v3 {width:75px;}
+.inputSmall_v4 {width:95px;}
+.inputSmall {width:135px;}
+.inputMedium {width:175px;}
+.inputLarge {width:250px;}
+.inputLarger {width:320px;}
+
+.doubt {width:16px;height:25px;line-height:25px;display:inline-block;cursor:help;text-indent:-9999px;background:url(images/bg-sso-form-tooltip.gif) no-repeat center left;}
+.tp{display:none;background:url(images/bg-sso-form-tooltip-box.gif) no-repeat top left;width:190px;height:67px;padding:10px 5px 5px 20px;}
+.tp p{font-size:9px;line-height:11px;margin:0 0 20px;}
+.popItUp{display:none;position:absolute;top:5%;left:50%;margin-left:-290px;z-index:9999;}
+
+section form span.tooltip {width:16px;height:25px;line-height:25px;display:inline-block;cursor:help;position:relative;z-index: 10;right:0; top:-2px; z-index:20000;vertical-align:middle;background:url(images/bg-sso-form-tooltip.gif) no-repeat center left;}
+section form div.tooltip {background: url(images/bg-sso-form-tooltip-box.gif) no-repeat top left;display:none;padding:10px 5px 5px 20px;position:absolute;text-align: left;top:-15px;left:65px;width:190px;height:67px;}
+/*section form .codigoSeguranca div.tooltip {display:none;background:transparent none;text-align: left;width: auto;height:auto;position:absolute;top:-15px;left:65px;}*/
+section form div.tooltip.tipimg {z-index:400; width:388px !important; height:161px !important;}
+section form label, section form div {display:block;clear:both;margin-bottom:5px;}
+section form label.closed {display:none;}	
+section form label {z-index: 0;}
+section form div {z-index: 10;}
+section form label strong, section form div strong {display:inline-block;color:#333;text-align:right;margin-right:7px;}
+section form label small, section form div small {font-size:10px;display:block;margin-left:145px;}
+
+p.camposObrigatoriosSmall {
+	font-size:12px;
+	margin:0 0 20px 0;
+	padding:0;
+	text-align:right;
+	float:right;
+	height: 10px;
+}
+	
+section form .optionGroup {
+	display:block;
+	margin-bottom: 5px;
+	height:26px;
+	}
+section form div.optionGroup strong { /* Grupo de checkboxes/radios buttons */
+	float:left;
+	text-align:right; padding:6px 0 0;}
+	section form div.optionGroup div { 
+		width:auto;
+		margin:0;
+		padding:0;
+		float:left; 
+		clear:none;}  
+		section form div.optionGroup div strong { float:none }
+	section form div.optionGroup div .selectbox {margin-bottom:0;} 
+section form .submit { 
+	background:transparent url(images/bg-sso-form-inputSubmit.jpg) no-repeat left top;
+	margin:5px 0 0 0;
+	*margin:10px 0 0 0;
+	font:bold 11px/28px Arial, Helvetica, Verdana, Tahoma, sans-serif !important;
+	cursor:pointer;
+	color:#fff !important;
+	padding:0 5px; 
+	display:inline-block;
+	outline:0 none;
+	border:0 none;
+	height:28px;
+	
+	width:91px; 
+	text-decoration:none;
+}
+section form .submit.rghtIpt{margin:-9px -108px 0 15px;}
+
+section form .submitAlteraSenha { 
+	background:transparent url(images/bg-sso-form-inputSubmit.jpg) no-repeat left top;
+	margin:5px 0 0 190px;
+	*margin:10px 0 0 0;
+	font:bold 11px/28px Arial, Helvetica, Verdana, Tahoma, sans-serif !important;
+	cursor:pointer;
+	color:#fff !important;
+	padding:0 5px; 
+	display:inline-block;
+	outline:0 none;
+	border:0 none;
+	height:28px;
+	width:91px; 
+	text-decoration:none;
+} 
+section form .voltar { 
+	background:transparent url(images/bg-sso-form-inputSubmit.jpg) no-repeat left top;
+	margin:5px 0 0 0;
+	*margin:10px 0 0 0;
+	font:bold 11px/28px Arial, Helvetica, Verdana, Tahoma, sans-serif !important;
+	cursor:pointer;
+	color:#fff !important;
+	padding:0 5px; 
+	display:inline-block;
+	outline:0 none;
+	border:0 none;
+	height:28px;
+	float:left;
+	width:91px; 
+	text-decoration:none;}
+	#criacaoLoginSenha {width:575px;
+		*width:610px;
+		 _width:600px;}
+	#criacaoLoginSenha .submit {margin-right:0;}
+section form .submitModal { /* quando o submit do form é feito via href para ativação do modal */
+	background:transparent url(images/bg-sso-form-inputSubmit.jpg) no-repeat left top;
+	margin:5px 70px 0 0 ; 
+	font:bold 11px/28px Arial, Helvetica, Verdana, Tahoma, sans-serif !important;
+	cursor:pointer;
+	clear:both;
+	color:#fff !important;
+	display:inline-block;
+	outline:0 none;
+	border:0 none;
+	height:28px;
+	float:right;
+	width:91px; 
+	text-decoration:none;}
+	
+section form .submitModal:hover { 
+	background-position: left bottom;
+}
+section form a.bthover,
+section form input.bthover { 
+	background-position: left bottom;
+	text-decoration:none;
+}
+
+	section form .submit:hover { 
+	background-position: left bottom;
+}
+section form a.bthover,
+section form input.submit:active, 
+section form input.submit:focus, 
+section form input.submit:hover, 
+section form input.bthover { 
+	background-position: left bottom !important;
+	text-decoration:none;
+}
+section form input.voltar:active, 
+section form input.voltar:focus, 
+section form input.voltar:hover { 
+	background-position: left bottom !important;
+	text-decoration:none;
+}
+	
+/* Home */
+#sso-home.area-sso #geral section {width:100%;overflow:visible;float:none;}
+#sso-home section form {float:none;margin:0 auto 30px;}
+section form fieldset h3 {width:100%;height:31px;}
+.login h3, .contato h3 {background:url("images/dot.gif") repeat-x scroll center bottom transparent;font:bold 18px Arial,Helvetica,Verdana,Tahoma,sans-serif;width:100%;height:31px;padding:0;margin:0;}
+.crieSeuLogin h3 {background:url("images/dot.gif") repeat-x scroll center bottom transparent;clear:both;color:#000000;font:bold 22px Arial,Helvetica,Verdana,Tahoma,sans-serif;margin:0;padding:0;position:relative;}
+.dadosPessoais h3 {background:url("images/dot.gif") repeat-x scroll center bottom transparent;font:bold 22px Arial,Helvetica,Verdana,Tahoma,sans-serif;width:100%;height:31px;padding:0;margin:0;}
+.endereco h3 {background: url("images/dot.gif") repeat-x scroll center bottom transparent;font: bold 22px Arial,Helvetica,Verdana,Tahoma,sans-serif;width:100%;height:31px;padding:0;margin:0;}
+.fdsLogin, fieldset.dadosPessoais, .fdsCrieSeuLogin {margin:0;padding:0;width:560px;}
+.codigoSeguranca{width:590px;}
+.fdsCrieSeuLogin h3 { background:url(images/dot.gif) repeat-x center bottom !important; font-size: 20px; width: 465px; text-indent: 0px; }
+.LabelCheckBox { margin: 0 0 5px 0; _padding: 0; display: inline-block; float: left; width: 100%; }
+.codigoSeguranca h4 { margin: 0 0 20px 0; color: #000; }
+#criacaoLoginSenha,	#crieSeuLogin {float:left!important;_padding-top:20px;margin:10px auto 0 auto;}
+#criacaoLoginSenha .controls .submit { margin-right: 20px; }
+#criacaoLoginSenha .endereco .controls .submit {_float:left!important;_margin-left: 420px !important;}
+#criacaoLoginSenha .controls, #crieSeuLogin .controls {z-index:1!important;padding:10px 0 0 0!important;overflow:hidden;}
+#crieSeuLogin .controls .sDesbloqueio { margin-left: 260px; }
+
+/* Validacao de Dados */
+h2.sso-3-crieSeuLogin span { background:url(images/bg-sso-header-menu-3steps.png) no-repeat 0 0; }
+h2.sso-4-crieSeuLogin span { background:url(images/bg-sso-header-menu-4steps.png) no-repeat 0 0; }
+h2.sso-4-crieSeuLogin span.validacao { background-image:url(images/bg-sso-header-menu-3stepsv2.png); text-indent: -9999px; }
+.codigoSeguranca h3 {background: url("images/dot.gif") repeat-x scroll center bottom transparent;font: bold 22px Arial,Helvetica,Verdana,Tahoma,sans-serif;width:100%;height:31px;padding:0;}
+
+/* Atualizacao cadastro*/
+h2.sso-4-atualizacaoCadastro span { background:url(images/bg-sso-header-menu-4steps.png) no-repeat 0 -73px; }
+
+/* Criacao de login e senha */
+h2.sso-3-criacaoLoginSenha span { background:url(images/bg-sso-header-menu-3steps.png) no-repeat 0 -73px; }
+h2.sso-4-criacaoLoginSenha span { background:url(images/bg-sso-header-menu-4steps.png) no-repeat 0 -146px; }
+
+section form .regulamento {width:472px;height:145px;background:url(images/bg-sso-form-regulamento.jpg) no-repeat; margin:0 0 10px 60px;padding:10px 0 10px 10px;}
+section form .regulamento div {width:465px;padding:0px;margin:0;height:145px;overflow:auto;}
+section form .regulamento strong {width:auto;}
+section form .regulamento p { margin-bottom:10px;font-size:11px;line-height:12px;}
+
+/* Confirmacao */
+h2.sso-3-confirmacao span { background:url(images/bg-sso-header-menu-3steps.png) no-repeat 0 -146px;}
+h2.sso-4-confirmacao span { background:url(images/bg-sso-header-menu-4steps.png) no-repeat 0 -219px;}
+h3.avisoSSO {background:none !important;margin:0 0 10px 0;font-weight:normal;font-size:14px;}
+h3.avisoSSO span{	display:block;margin:0;font-size:14px;}
+h3.subTitSSO {background:none !important;margin:0 0 10px 0;font-weight:normal;font-size:14px;}
+h3.subTitSSO2 {background:none !important;
+margin:35px 5px 25px 0;font-weight:normal;font-size:12px; display: block;}
+#sso-3-confirmacao aside, #sso-4-confirmacao aside {	float:left;margin-top:20px;	min-height:125px;	_height:160px;}
+#sso-3-confirmacao aside a.button, #sso-4-confirmacao aside a.button { margin-top:10px; }
+#sso-3-confirmacao section.protocoloAtendimento, #sso-4-confirmacao section.protocoloAtendimento {margin-top:20px;background:#F2F2F2;float:right;font:normal 11px/20px Arial, Helvetica, Verdana, Tahoma, sans-serif;padding:22px 35px;width:580px;_height:152px;}
+#sso-3-confirmacao .protocoloAtendimento h4,	#sso-4-confirmacao .protocoloAtendimento h4 {font: bold 18px/20px Arial, Helvetica, Verdana, Tahoma, sans-serif;margin: 0px 0px 10px;height:16px;width:100%;}
+.protocoloAtendimento p big {font-size:17px; display:block; padding-bottom:15px;}
+.protocoloAtendimento .date {padding-right:100px;}
+.controls {padding:50px 0 10px; clear:both; z-index:1 !important;}
+.controls.controlssso {overflow:hidden; width:473px !important;}
+.controls.controlssso2 {overflow:hidden; width:auto !important;}
+.controls.controlssso .submit {margin:0;}
+.sweetForm .controls .button{position:relative; z-index:0 !important;}
+.avisodados {color:#d40000;font-weight:bold;font-size:11px;}
+#modal div {display:none;}
+.modals {margin:0;float:right;}
+#agenda-excluirContato {width:383px;}
+#agenda-excluirContato h2 {font-size:14px;font-weight:bold;line-height:16px;}
+#agenda-excluirContato ul {margin:20px 0 40px 0;}
+#agenda-excluirContato ul li {list-style:none;font-size:12px;	background:url(images/bullet-modal.jpg) no-repeat left center;padding:2px 0 2px 10px;}
+#fancybox-close {display:none !important;}
+
+.size14 {font-size:14px}
+.msgInput {margin-left:146px;}
+#compPrincipal_1{*widht: 600px !important;}
+
+.inputMedium.iptNascimento.typeText {width:78px;}
+.inputMedium.iptCPF.typeText{width:102px;}
+/*Cadastro novo - tooltip*/
+#sso-home .tp.cdt{display:none;background:url("images/bg-sso-form-tooltip-box2.png") no-repeat scroll left top transparent;width:200px;height:100px;padding:10px 0 5px 25px;}
+
+#sso-home .tp.cdt p{font-size:9px;line-height:11px;margin:0 10px 10px 0;}
+/*fim*/
+/*Begin Login Unico - e altera Dados 2012*/
+
+#criacaoLoginSenha > .contato > .divLabel strong {width:90px;}
+#criacaoLoginSenha > .contato > .divLabel .iptRadio {margin:-3px 5px 0;}
+#criacaoLoginSenha > .contato > .divLabel label{float:left;*width:380px;}
+#criacaoLoginSenha > .contato > .divLabel .num label{*padding-top:0; *width:245px;}
+
+#criacaoLoginSenha > .contato > .divLabel > .news{height:25px; margin:0 0 10px 100px;}
+
+#criacaoLoginSenha .avisoDados{float:left;
+   clear:none!important;
+   width:220px;
+   line-height:13px;
+   margin:11px 0 0 5px;
+}
+#criacaoLoginSenha > .login > .avisoDados{margin-top:15px;}
+#criacaoLoginSenha > .login label > .avisoDados{
+   float:right; 
+   margin-top:7px;
+   width:260px;
+   *margin:-22px 105px 0 0;
+}
+#criacaoLoginSenha > .login label > .error{margin-left:13px;}
+
+#criacaoLoginSenha > .contato > .divLabel .avisoDados{width:110px;
+   *margin:19px 0 0 75px;
+}
+#criacaoLoginSenha > .contato > .divLabel.two .avisoDados{*margin:24px 0 0 225px;}
+#criacaoLoginSenha > .contato > .divLabel > .email .avisoDados{width:190px; margin-top:17px; *margin:17px 0 0 5px;}
+#criacaoLoginSenha > .contato > .divLabel > .num .avisoDados{width:220px; margin-top:16px;
+   *margin:9px 0 0;
+}
+#criacaoLoginSenha > .contato > .avisoDados{margin:10px 0 0 138px;}
+#criacaoLoginSenha > .login > label strong{float:left}
+#criacaoLoginSenha  input.inputCheckBoxSSO{margin:-4px 0 0 60px;
+   *margin:-3px 0 0 60px;}
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+   #criacaoLoginSenha > .contato > .divLabel .iptRadio {margin:-5px 5px 0;}
+}
+#criacaoLoginSenha > .login > label > strong{margin-top:5px;}
+#criacaoLoginSenha .divLabel h3.subTitSSO2{*margin:0px 5px 25px 0px;}
+
+
+.wrapinput input{font-size: 13px; line-height: 15px;}
+
+input[type="text"]{font-family: arial,tahoma,sans-serif;}
+	
+.fieldsetProcLogin2 .buttons .submit{margin: 25px 0 0 0;}
+.area-sso h2 span.logo{float: left;width: 78px;height: 76px; padding: 2px; margin: 0 0 0 -6px;}
+.fieldsetProcLogin2 .sibling{clear:none;float: left;margin: 0 0 0 40px;
+}
+.fieldsetProcLogin2 .sibling select{width: 250px;
+}
+#crieSeuLogin .nav{float: right; margin: 0 15px 0 0; }
+
+#crieSeuLogin input[type="text"]{width: 320px;}
+#crieSeuLogin textarea{width: 305px; min-height: 150px;}
+#crieSeuLogin .buttons.inf{margin-left: 100px;}
+.tb-msg table{width: auto; 
+  z-index:0; margin-top: 15px;}
+.tb-msg table.service{ width: 600px; font-size: 9px;}  
+.tb-msg table.medium{font-size: 8px;}
+.tb-msg table.big{font-size: 12px;}
+.tb-msg table.canais{width: 710px;}
+.tb-msg table .ver{background:url("../images/icon-fatura-detalhada.png") no-repeat scroll left top transparent; cursor: pointer; width: 14px;height: 16px; position: relative;display: block; }
+.tb-msg table .alterar{background:url("../images/icone_editar.gif") no-repeat scroll left top transparent; cursor: pointer; width: 14px;height: 14px; position: relative;display: block; margin-left: 5px; }
+.tb-msg table .excluir{background:url("../images/icone-excluir.gif") no-repeat scroll left top transparent; cursor: pointer; width: 14px;height: 14px; position: relative;display: block; margin-left: 5px; }
+
+.tb-msg .link-incluir{float: right; margin-bottom: 10px;}
+.nav-tb{margin-top: 5px; font-size: 12px;} 
+.nav-tb .total-msg{float: left;}
+.nav-tb .nav{float: right;clear: none;}
+.nav-tb .nav a.active{font-weight: bold;}
+.nav-tb .nav .pag-atual{margin-left: 5px;}
+.nav-tb .nav .pag-atual strong{margin-left: 5px;}
+
+.dt-1{width: 4%;}
+.dt-2{width: 40%;}
+.dt-3{width: 10%;}
+.dt-4{width: 7%;}
+.dt-5{width: 5%;}
+.dt-9{width: 20%;}
+.divlabel b, label b{width: 110px;}
+.divlabel, label{padding-bottom: 0;}
+
+
+#fancybox-content h3{width: 450px;font:13px/15px Arial,Helvetica,Verdana,Tahoma,sans-serif;}
+
+#fancybox-content div.actionGroup{text-align: center;margin: 0;}
+#fancybox-content .actionGroup a{position: relative;margin-left: 10px; }
+#modal-excluir{width: 530px;}
+.miolo-resposta,#msg-include-sucess{width: 450px;}
+.miolo-resposta.erro{width: 545px;}
+.miolo-resposta.erro h2{background:url("images/alertaFrase.png") no-repeat scroll left top transparent; padding-left: 45px; }
+
+#fancybox-content .miolo-resposta.erro form{width: auto;}
+
+.miolo-resposta form{text-align: center; margin-left: -35px!important;}
+
+section fieldset.interacao{background: url("images/dot.gif") repeat-x scroll center bottom transparent;padding-bottom: 30px; }
+.interacao textarea{min-height: 200px;}
+.interacao .extrato.canal{padding: 10px 50px;}
+.buttons.inf{text-align: center;}
+.buttons.inf a{padding: 0;}
+.canais td label{float: left; clear: none;padding-top: 4px;}
+
+.div-admin-perfil{padding-right: 15px;}
+/*End Login Unico*/

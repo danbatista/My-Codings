@@ -1,0 +1,45 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app id="${artifactId}" version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+
+	<portlet>
+		<portlet-name>${artifactId}</portlet-name>
+		<display-name>${artifactId}</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/config/webmvc-config.xml				
+				classpath:poi-commons-config-context.xml				
+				classpath:poi-auditoria-commons-context.xml
+			</value>
+		</init-param>
+		<init-param>
+			<name>viewRendererUrl</name>
+			<value>/WEB-INF/servlet/view</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>${artifactId}</title>
+			<short-title>${artifactId}</short-title>
+			<keywords>${artifactId}</keywords>
+		</portlet-info>
+
+		<portlet-preferences>
+			<preference>
+				<name>PARAMETRO_ID_SERVICO</name>
+				<value>${auditoria_funcionalidade_id}</value>
+			</preference>
+		</portlet-preferences>
+
+	</portlet>
+
+	<default-namespace>${artifactId}</default-namespace>
+</portlet-app>
