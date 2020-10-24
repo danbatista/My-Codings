@@ -95,7 +95,7 @@
 			<version>2.5</version>
 		</dependency>
 
-		<!-- Dependencias para testes unitários -->
+		<!-- Dependencias para testes unitÃ¡rios -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -376,7 +376,7 @@
 		</dependency>
 
 
-		<!-- Removendo as dependências indiretas dos bibliotecas para geracao do 
+		<!-- Removendo as dependÃªncias indiretas dos bibliotecas para geracao do 
 			manifest -->
 		<dependency>
 			<groupId>commons-beanutils</groupId>
@@ -406,7 +406,7 @@
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
-			<version>3.1</version>
+			<version>3.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-digester</groupId>
@@ -446,10 +446,10 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- Fim da remoção de dependencias indiretas das libs para geracao do 
+		<!-- Fim da remoÃ§Ã£o de dependencias indiretas das libs para geracao do 
 			manifest -->
-		<!-- As Bibliotecas estão repetidas para a geracao das entradas no MANIFEST.MF 
-			As mesmas não devem ser incluidas no WEB-INF/lib do WAR -->
+		<!-- As Bibliotecas estÃ£o repetidas para a geracao das entradas no MANIFEST.MF 
+			As mesmas nÃ£o devem ser incluidas no WEB-INF/lib do WAR -->
 
 		<dependency>
 			<groupId>asm</groupId>
